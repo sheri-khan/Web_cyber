@@ -29,6 +29,7 @@ h1, h2, h3 {
 }
 
 /* Navbar */
+/* Navbar */
 .navbar {
     background-color: #007bff;
     color: #fff;
@@ -37,24 +38,39 @@ h1, h2, h3 {
 .navbar ul {
     list-style: none;
     margin: 0;
-    padding: 8px;
+    padding: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: nowrap; /* Keeps items in a single line */
+    overflow-x: auto; /* Allows horizontal scrolling if needed */
 }
 
 .navbar ul li {
-    margin: 0 15px;
+    margin: 0 10px; /* Adjusted margin for horizontal spacing */
 }
 
 .navbar ul li a {
     color: #fff;
     text-decoration: none;
     padding: 10px 15px;
+    display: block; /* Ensures the link takes up the full height of the list item */
 }
 
 .navbar ul li a:hover {
     background-color: #0056b3;
     border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: row; /* Ensures items are in a row */
+        overflow-x: auto; /* Allows horizontal scrolling if needed */
+    }
+
+    .navbar ul li {
+        margin: 0 5px; /* Adjusted margin for better spacing */
+    }
 }
 
 /* Container */
