@@ -46,13 +46,14 @@ h1, h2, h3 {
 }
 
 .navbar ul li {
-    margin: 0 10px; /* Adjusted margin for horizontal spacing */
+    margin: 0 5px; /* Adjusted margin for horizontal spacing */
 }
 
 .navbar ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 8px 10px; /* Reduced padding for smaller screens */
+    font-size: 14px; /* Reduced font size for smaller screens */
     display: block; /* Ensures the link takes up the full height of the list item */
 }
 
@@ -70,6 +71,18 @@ h1, h2, h3 {
 
     .navbar ul li {
         margin: 0 5px; /* Adjusted margin for better spacing */
+    }
+
+    .navbar ul li a {
+        padding: 8px 10px; /* Reduced padding for smaller screens */
+        font-size: 14px; /* Reduced font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar ul li a {
+        padding: 6px 8px; /* Further reduced padding for very small screens */
+        font-size: 12px; /* Further reduced font size for very small screens */
     }
 }
 
