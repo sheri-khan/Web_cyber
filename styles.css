@@ -42,7 +42,6 @@ h1, h2, h3 {
     display: flex;
     justify-content: center;
     flex-wrap: nowrap; /* Keeps items in a single line */
-    overflow-x: auto; /* Allows horizontal scrolling if needed */
 }
 
 .navbar ul li {
@@ -50,9 +49,10 @@ h1, h2, h3 {
 }
 
 .navbar ul li a {
+    margin-left: 20px;
     color: #fff;
     text-decoration: none;
-    padding: 8px 10px; /* Reduced padding for smaller screens */
+    padding: 8px 10px; /* Reduced padding for better fit */
     font-size: 14px; /* Reduced font size for smaller screens */
     display: block; /* Ensures the link takes up the full height of the list item */
 }
@@ -65,37 +65,21 @@ h1, h2, h3 {
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar ul {
-        flex-direction: row; /* Ensures items are in a row */
-        overflow-x: auto; /* Allows horizontal scrolling if needed */
+        flex-direction: column; /* Switch to vertical layout on small screens */
+        align-items: flex-start; /* Align items to the start */
+        padding: 0; /* Remove padding */
     }
 
     .navbar ul li {
-        margin: 0 5px; /* Adjusted margin for better spacing */
+        margin: 5px 0; /* Vertical margin for spacing */
     }
 
     .navbar ul li a {
-        padding: 8px 10px; /* Reduced padding for smaller screens */
-        font-size: 14px; /* Reduced font size for smaller screens */
+        width: 100%; /* Make links full width */
+        text-align: center; /* Center text inside links */
+        padding: 12px 0; /* Adjust padding for vertical layout */
+        font-size: 16px; /* Adjust font size for better readability */
     }
-}
-
-@media (max-width: 480px) {
-    .navbar ul li a {
-        padding: 6px 8px; /* Further reduced padding for very small screens */
-        font-size: 12px; /* Further reduced font size for very small screens */
-    }
-}
-
-/* Container */
-.container {
-    width: 80%; /* Takes up 80% of the width */
-    margin: 0 auto; /* Centers horizontally within its parent */
-    padding: 0 15px;
-    display: flex; /* Use flexbox to align items */
-    flex-direction: column; /* Ensures content flows top to bottom */
-    justify-content: flex-start; /* Align items from the top */
-    flex: 1; /* Allows the container to grow and fill available space */
-    margin-bottom: 60px; /* Space for the fixed footer */
 }
 
 /* Content */
@@ -105,6 +89,10 @@ h1, h2, h3 {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     margin: 0 auto; /* Centers the content within the container */
     width: 100%; /* Content takes full width of the container */
+}
+.container {
+    margin-bottom: 60px; /* Add space for footer */
+    margin-left: 50px;
 }
 
 /* Forms */
@@ -161,6 +149,7 @@ footer {
     position: fixed;
     bottom: 0;
     left: 0;
+    z-index: 1000; /* Ensure it's above other content */
 }
 
 /* Floating Updates Button */
