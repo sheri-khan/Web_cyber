@@ -6,10 +6,10 @@ body {
     background-color: #f8f9fa;
     color: #333;
     line-height: 1.6;
-
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Ensure body takes full height */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 h1, h2, h3 {
@@ -18,6 +18,7 @@ h1, h2, h3 {
 
 /* Main Header */
 .main-header {
+    width: 100%;
     background-color: black;
     color: #fff;
     text-align: center;
@@ -29,10 +30,10 @@ h1, h2, h3 {
 }
 
 /* Navbar */
-/* Navbar */
 .navbar {
     background-color: #007bff;
     color: #fff;
+    width: 100%;
 }
 
 .navbar ul {
@@ -49,12 +50,14 @@ h1, h2, h3 {
 }
 
 .navbar ul li a {
-    margin-left: 20px;
     color: #fff;
     text-decoration: none;
     padding: 8px 10px; /* Reduced padding for better fit */
     font-size: 14px; /* Reduced font size for smaller screens */
     display: block; /* Ensures the link takes up the full height of the list item */
+    margin-left: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
 .navbar ul li a:hover {
@@ -87,12 +90,14 @@ h1, h2, h3 {
     background-color: #fff;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin: 0 auto; /* Centers the content within the container */
     width: 100%; /* Content takes full width of the container */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
+
+/* Container */
 .container {
     margin-bottom: 60px; /* Add space for footer */
-    margin-left: 50px;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 /* Forms */
@@ -110,6 +115,7 @@ form input, form textarea, form select {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 form button {
@@ -132,11 +138,7 @@ details {
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f8f9fa;
-}
-
-details summary {
-    font-weight: bold;
-    cursor: pointer;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 /* Footer */
@@ -150,6 +152,7 @@ footer {
     bottom: 0;
     left: 0;
     z-index: 1000; /* Ensure it's above other content */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 /* Floating Updates Button */
@@ -192,6 +195,7 @@ footer {
     width: 80%;
     max-width: 400px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 .close {
