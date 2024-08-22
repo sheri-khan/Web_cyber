@@ -15,6 +15,13 @@ body {
 h1, h2, h3 {
     color: #007bff;
 }
+p{
+    font-size: 18px;
+}
+#service_h3{
+    margin-left: 20px;
+    text-decoration: underline;
+}
 
 /* Main Header */
 .main-header {
@@ -61,7 +68,7 @@ h1, h2, h3 {
 }
 
 .navbar ul li a:hover {
-    background-color: #0056b3;
+    background-color: #28ca43;
     border-radius: 5px;
 }
 
