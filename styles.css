@@ -6,41 +6,39 @@ body {
     background-color: #f8f9fa;
     color: #333;
     line-height: 1.6;
+
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Ensure body takes full height */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 h1, h2, h3 {
     color: #007bff;
 }
-p{
-    font-size: 18px;
-}
-#service_h3{
-    margin-left: 20px;
-    text-decoration: underline;
-}
 
 /* Main Header */
 .main-header {
-    width: 100%;
-    background-color: black;
+    /* background-color: black; */
+    background: center / cover no-repeat url("img/bc1.jpeg");
+
     color: #fff;
     text-align: center;
     padding: 2px;
     font-size: 25px;
 }
 .main-header h1 {
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 /* Navbar */
+/* Navbar */
 .navbar {
-    background-color: #007bff;
-    color: #fff;
-    width: 100%;
+    background-color: #2c3e50;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .navbar ul {
@@ -48,63 +46,113 @@ p{
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    flex-wrap: nowrap; /* Keeps items in a single line */
 }
 
 .navbar ul li {
-    margin: 0 5px; /* Adjusted margin for horizontal spacing */
+    margin: 0 20px;
+    position: relative;
 }
 
 .navbar ul li a {
-    color: #fff;
+    color: #ecf0f1;
     text-decoration: none;
-    padding: 8px 10px; /* Reduced padding for better fit */
-    font-size: 14px; /* Reduced font size for smaller screens */
-    display: block; /* Ensures the link takes up the full height of the list item */
-    margin-left: 20px;
-    border: 1px solid black;
-    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
 }
 
 .navbar ul li a:hover {
-    background-color: #28ca43;
-    border-radius: 5px;
+    color: #2c3e50;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+.navbar ul li a::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #f39c12, #e74c3c, #8e44ad, #3498db);
+    z-index: -1;
+    background-size: 400%;
+    border-radius: 10px;
+    animation: gradientAnimation 4s linear infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
     .navbar ul {
-        flex-direction: column; /* Switch to vertical layout on small screens */
-        align-items: flex-start; /* Align items to the start */
-        padding: 0; /* Remove padding */
+        flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+        justify-content: center; /* Center items when wrapping */
     }
 
     .navbar ul li {
-        margin: 5px 0; /* Vertical margin for spacing */
+        margin: 10px 15px; /* Adjust spacing between items */
     }
 
     .navbar ul li a {
-        width: 100%; /* Make links full width */
-        text-align: center; /* Center text inside links */
-        padding: 12px 0; /* Adjust padding for vertical layout */
-        font-size: 16px; /* Adjust font size for better readability */
+        padding: 8px 15px; /* Adjust padding for smaller screens */
+        font-size: 16px; /* Adjust font size for better fit */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: center; /* Center items vertically */
+    }
+
+    .navbar ul li {
+        margin: 5px 0; /* Reduce margin between items when stacked */
+    }
+
+    .navbar ul li a {
+        padding: 10px 20px; /* Adjust padding for touch targets */
+        font-size: 18px; /* Increase font size for readability */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar ul li a {
+        padding: 10px 15px; /* Further adjust padding for very small screens */
+        font-size: 16px; /* Adjust font size to fit small screens */
     }
 }
 
 /* Content */
 .content {
-    background-color: #fff;
+    font-weight: bold;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Content takes full width of the container */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    margin: 0 auto; /* Centers the content within the container */
+    width: 80%; /* Adjust the width to keep the content away from the edges */
+    max-width: 1200px; /* Limit the width for large screens */
+    padding-left: 40px; /* Add padding to the left to push content away from the screen edge */
+    padding-right: 40px; /* Optional: Add padding to the right to balance the content */
 }
 
-/* Container */
+
 .container {
     margin-bottom: 60px; /* Add space for footer */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    /* margin-left: 50px; */
 }
 
 /* Forms */
@@ -122,7 +170,6 @@ form input, form textarea, form select {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 form button {
@@ -145,7 +192,11 @@ details {
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f8f9fa;
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+details summary {
+    font-weight: bold;
+    cursor: pointer;
 }
 
 /* Footer */
@@ -153,13 +204,12 @@ footer {
     background-color: black;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 10px 20px;
     width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 1000; /* Ensure it's above other content */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
+   
+    
+  
+
 }
 
 /* Floating Updates Button */
@@ -202,7 +252,6 @@ footer {
     width: 80%;
     max-width: 400px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 .close {
