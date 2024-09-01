@@ -20,11 +20,12 @@ h1, h2, h3 {
 .main-header {
     /* background-color: black; */
     background: center / cover no-repeat url("img/bc1.jpeg");
-
+    background-color: black;
     color: #fff;
     text-align: center;
     padding: 2px;
     font-size: 25px;
+    
 }
 .main-header h1 {
     color: rgb(255, 255, 255);
@@ -147,6 +148,7 @@ h1, h2, h3 {
     max-width: 1200px; /* Limit the width for large screens */
     padding-left: 40px; /* Add padding to the left to push content away from the screen edge */
     padding-right: 40px; /* Optional: Add padding to the right to balance the content */
+    margin-bottom: 120px;
 }
 
 
@@ -159,6 +161,8 @@ h1, h2, h3 {
 form {
     display: flex;
     flex-direction: column;
+    margin-bottom: 150px;
+    
 }
 
 form label {
